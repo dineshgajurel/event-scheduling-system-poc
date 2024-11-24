@@ -80,10 +80,11 @@ other can be discussed 🙂...
 
 1. A New User module can be considered to handle all the user/Auth related functionalities
 2. The user-id middleware can be extended to actual auth middleware and handle all the auth-related functions
-3. The Seeder script to generate users and other required data
+3. The Seeder script to generate users and other required data (couldnot finalized that due to time limit and wanted to complete functionalities first)
 4. The /event PATCH request can be further extended to handle and manage all the event-related (like scheduling time, timezone, etc.) and participant-related functionalities of respective events/users. We can use the already implemented logic in the create events (to handle timezone, schedule conflict, etc.).
 5. While working on it, I realized we can handle all the events with a recurrence approach by using once instead of none. (but can be finalized and improved later). for now, I have left both approaches working
 6. The Participant module also can be further extended to authorize the user level access (events created by the user) -- note: if needed
+7. Test cases (in fact, I wanted to go with TDD, but thought of completing the major functionlities without considering the test case due to time constraint)
 
 and the further observations from your side while reviewing this repository 🙂...
 
