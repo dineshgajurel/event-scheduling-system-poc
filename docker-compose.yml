@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: event-scheduling-app
+    ports:
+      - '3000:3000'
+    # depends_on:
+    #   - db
+    # environment:
+    #   - DATABASE_HOST=db
+    #   - DATABASE_PORT=5432
+    #   - DATABASE_USER=postgres
+    #   - DATABASE_PASSWORD=postgres
+    #   - DATABASE_NAME=event_scheduling_system
+    #   - NODE_ENV=production
+    volumes:
+      - .:/app
+      # - /app/node_modules
+    # networks:
+    #   - app-network
+
+  db:
+    image: postgres
+    container_name: postgres-db
+    ports:
+      - '5432:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: event_scheduling_system
+    # volumes:
+    #   - db-data:/var/lib/postgresql/data
+    # networks:
+    #   - app-network
+# volumes:
+#   db-data: # Persistent storage for the database
+
+# networks:
+#   app-network: # Shared network for the app and db
+
